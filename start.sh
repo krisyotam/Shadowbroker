@@ -70,7 +70,7 @@ echo ""
 echo "[*] Clearing zombie processes..."
 
 # Kill anything listening on ports 8000 or 3000
-for PORT in 8000 3000 8787; do
+for PORT in 8000 3090 8787; do
     if command -v lsof &> /dev/null; then
         PIDS=$(lsof -ti :$PORT 2>/dev/null)
     elif command -v ss &> /dev/null; then
@@ -252,7 +252,7 @@ echo "[*] Frontend dependencies OK."
 echo ""
 echo "======================================================="
 echo "  Starting services...                                 "
-echo "  Dashboard: http://localhost:3000                     "
+echo "  Dashboard: http://localhost:3090                     "
 echo "  Keep this window open! Initial load takes ~10s.      "
 echo "======================================================="
 echo "  (Press Ctrl+C to stop)"
